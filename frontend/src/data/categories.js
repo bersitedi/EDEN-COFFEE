@@ -22,6 +22,11 @@ const categories = [
         description: "Description for Card 2",
         imageUrl: two,
       },
+      {
+        title: "Card 1",
+        description: "Description for Card 1",
+        imageUrl: one,
+      },
     ],
   },
   {
@@ -39,6 +44,11 @@ const categories = [
         description: "Description for Card 2",
         imageUrl: four,
       },
+      {
+        title: "Card 2",
+        description: "Description for Card 1",
+        imageUrl: three,
+      },
     ],
   },
   {
@@ -55,6 +65,11 @@ const categories = [
         title: "Card 3",
         description: "Description for Card 2",
         imageUrl: five,
+      },
+      {
+        title: "Card 3",
+        description: "Description for Card 1",
+        imageUrl: four,
       },
     ],
   },

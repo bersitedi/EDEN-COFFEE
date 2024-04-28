@@ -1,28 +1,62 @@
 import React, { useState } from "react";
 import categories from "../../../data/categories";
+import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 
 const Sidebar = () => {
   const [selectedCategory, setSelectedCategory] = useState(categories[0].id);
+  const [navIsVisible, setNavIsVisible] = useState(false);
 
   const handleCategoryClick = (categoryId) => {
     setSelectedCategory(categoryId);
   };
 
+  const navVisibilityHandler = () => {
+    setNavIsVisible((curState) => !curState);
+  };
+
   return (
-    <div className="flex">
-      <aside
-        id="default-sidebar"
-        className="z-40 w-64 h-[500px] transition-transform -translate-x-full sm:translate-x-0"
-        aria-label="Sidebar"
+    <div className="relative mt-10 flex">
+      <div className="md:hidden z-50">
+        {navIsVisible ? (
+          <AiOutlineClose className="w-6 h-6" onClick={navVisibilityHandler} />
+        ) : (
+          <AiOutlineMenu className="w-6 h-6" onClick={navVisibilityHandler} />
+        )}
+      </div>
+
+      <div
+        className={`absolute inset-y-0 left-0 z-40 w-64 h-[400px] dark:bg-gray-800 transform ${
+          navIsVisible ? "translate-x-0" : "-translate-x-full"
+        } transition-transform md:hidden bg-yellow-900`}
       >
-        <div className="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800">
-          <ul className="space-y-2 font-medium">
+        <div className="h-full px-3 py-4">
+          <ul className="space-y-2 font-medium mt-10">
             {categories.map((category) => (
               <li key={category.id}>
                 <button
                   onClick={() => handleCategoryClick(category.id)}
-                  className={`flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group ${
-                    selectedCategory === category.id ? "font-bold" : ""
+                  className={`flex items-center p-2 text-white rounded-lg dark:text-white hover:bg-yellow-800 dark:hover:bg-gray-700 group ${
+                    selectedCategory === category.id ? "text-blue-800" : ""
+                  }`}
+                >
+                  <span className="ms-3">{category.title}</span>
+                </button>
+              </li>
+            ))}
+          </ul>
+          <button className="flex justify-center items-center border border-yellow-900"></button>
+        </div>
+      </div>
+
+      <div className="hidden md:flex z-40 w-64 h-[400px] bg-yellow-900 dark:bg-gray-800">
+        <div className="h-full px-3 py-4 overflow-y-auto">
+          <ul className="space-y-2 font-medium mt-10">
+            {categories.map((category) => (
+              <li key={category.id}>
+                <button
+                  onClick={() => handleCategoryClick(category.id)}
+                  className={`flex items-center p-2 text-white rounded-lg dark:text-white hover:bg-yellow-800 dark:hover:bg-gray-700 group ${
+                    selectedCategory === category.id ? "text-blue-800" : ""
                   }`}
                 >
                   <span className="ms-3">{category.title}</span>
@@ -31,7 +65,7 @@ const Sidebar = () => {
             ))}
           </ul>
         </div>
-      </aside>
+      </div>
 
       <div className="flex-1 p-4">
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
