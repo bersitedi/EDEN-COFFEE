@@ -40,7 +40,7 @@ const Footer = () => {
                 <img
                   src={logo}
                   className="h-full w-full mr-10 rounded-lg"
-                  alt="socail media image"
+                  alt="socail media"
                 />
               </Link>
             </div>

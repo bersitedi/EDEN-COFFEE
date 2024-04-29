@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { FaArrowRight } from "react-icons/fa";
 import { IoMdPin } from "react-icons/io";
 
-const Sidebar = () => {
+const Sidebar = ({ displayAll }) => {
   const [selectedCategory, setSelectedCategory] = useState(categories[0].id);
   const [navIsVisible, setNavIsVisible] = useState(false);
 
@@ -89,7 +89,8 @@ const Sidebar = () => {
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
             {categories
               .find((category) => category.id === selectedCategory)
-              ?.cards.map((card, index) => (
+              ?.cards.slice(0, displayAll ? categories.length : 3)
+              .map((card, index) => (
                 <Link to={card.link} key={index}>
                   {" "}
                   {/* Wrap each card with Link component */}
@@ -109,15 +110,17 @@ const Sidebar = () => {
                 </Link>
               ))}
           </div>
-          <div className="mt-16 flex flex-col justify-center items-center">
-            <Link
-              to="/coffee"
-              className="mx-auto flex items-center gap-x-2 font-bold bg-blue-500 text-white border-2 border-blue-500 px-6 py-1 rounded-lg hover:bg-white hover:text-blue-500"
-            >
-              <span>View all products</span>
-              <FaArrowRight className="w-3 h-3" />
-            </Link>
-          </div>
+          {!displayAll && (
+            <div className="mt-16 flex flex-col justify-center items-center">
+              <Link
+                to="/products"
+                className="mx-auto flex items-center gap-x-2 font-bold bg-blue-500 text-white border-2 border-blue-500 px-6 py-1 rounded-lg hover:bg-white hover:text-blue-500"
+              >
+                <span>View all products</span>
+                <FaArrowRight className="w-3 h-3" />
+              </Link>
+            </div>
+          )}
         </div>
       </div>
     </>
