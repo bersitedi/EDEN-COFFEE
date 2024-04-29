@@ -41,7 +41,7 @@ const Header = () => {
         <div
           className={`${
             navIsVisible ? "right-0" : "-right-full"
-          } transition-all duration-300 mt-[56px] md:mt-0 bg-gray-100 md:bg-gray-50 z-[49] flex flex-col w-full md:w-auto justify-center md:justify-end md:flex-row fixed top-0 bottom-0 md:static gap-x-9 items-center overflow-y-auto md:overflow-y-visible`}
+          } transition-all duration-300 mt-[56px] md:mt-0 bg-gray-100 md:bg-gray-50 z-[49] flex flex-col w-full md:w-auto justify-center md:justify-end md:flex-row fixed top-0 bottom-0 md:static gap-x-9 items-center overflow-hidden`}
         >
           <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-100 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
             {navItems.map((item, index) => (

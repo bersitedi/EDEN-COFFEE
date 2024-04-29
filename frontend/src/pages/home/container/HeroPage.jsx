@@ -12,7 +12,7 @@ const HeroPage = () => {
           height: "500px",
         }}
       >
-        <div className="absolute top-0 right-0 bottom-0 left-0 h-full w-full overflow-hidden bg-fixed bg-[hsla(0,0%,0%,0.75)]">
+        <div className="absolute top-0 right-0 bottom-0 left-0 h-full w-full overflow-hidden bg-fixed bg-[hsla(0,0%,0%,0.55)]">
           <div className="flex h-full items-center justify-center">
             <div className="px-6 text-center text-white md:px-12">
               <h1 className="mt-6 mb-16 text-5xl font-bold tracking-tight md:text-6xl xl:text-7xl">
@@ -31,15 +31,18 @@ const HeroPage = () => {
             </div>
           </div>
         </div>
-      </div>
-
-      <div className="-mt-2.5 text-white dark:text-neutral-800 md:-mt-4 lg:-mt-6 xl:-mt-10 h-[50px] scale-[2] origin-[top_center]">
-        <svg viewBox="0 0 2880 48" xmlns="http://www.w3.org/2000/svg">
-          <path
-            d="M 0 48 L 1437.5 48 L 2880 48 L 2880 0 L 2160 0 C 1453.324 60.118 726.013 4.51 720 0 L 0 0 L 0 48 Z"
-            fill="currentColor"
-          ></path>
-        </svg>
+        <div className="absolute inset-x-0 bottom-0 flex justify-center items-end scale-[2]">
+          <svg
+            viewBox="0 0 2160 48"
+            xmlns="http://www.w3.org/2000/svg"
+            className="text-white"
+          >
+            <path
+              d="M 0 48 L 1080 48 L 2160 48 L 2160 0 L 1620 0 C 1080 40 540 4 540 0 L 0 0 L 0 48 Z"
+              fill="currentColor"
+            ></path>
+          </svg>
+        </div>
       </div>
     </>
   );
