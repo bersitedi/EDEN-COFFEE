@@ -43,12 +43,12 @@ const Header = () => {
             navIsVisible ? "right-0" : "-right-full"
           } transition-all duration-300 mt-[56px] md:mt-0 bg-gray-100 md:bg-gray-50 z-[49] flex flex-col w-full md:w-auto justify-center md:justify-end md:flex-row fixed top-0 bottom-0 md:static gap-x-9 items-center overflow-hidden`}
         >
-          <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-100 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+          <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-100 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white">
             {navItems.map((item, index) => (
               <li key={index}>
                 <Link
                   to={item.href}
-                  className={`block py-2 px-3 rounded hover:bg-gray-100 md:hover:bg-transparent md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent ${
+                  className={`block py-2 px-3 rounded hover:bg-gray-100 md:hover:bg-transparent md:p-0  ${
                     location.pathname === item.href
                       ? "text-blue-500 md:bg-transparent dark:text-blue-300 dark:bg-transparent"
                       : "text-gray-900"

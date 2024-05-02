@@ -1,5 +1,3 @@
-// CardDetail.jsx
-
 import React from "react";
 import { useParams } from "react-router-dom";
 import categories from "../../data/categories";
@@ -19,7 +17,8 @@ const CardDetail = () => {
 
   const similarCards = categories
     .flatMap((category) => category.cards)
-    .filter((c) => c.id !== card.id);
+    .filter((c) => c.id !== card.id)
+    .slice(0, 8);
 
   return (
     <MainLayout>
@@ -46,9 +45,26 @@ const CardDetail = () => {
           </div>
         </div>
         <div className="flex-1">
-          <SimilarCards similarCards={similarCards} />
+          {similarCards && <SimilarCards originalSimilarCards={similarCards} />}
         </div>
       </section>
+      <div className="mt-10 p-8">
+        <h1 className="text-2xl text-blue-500 font-bold mb-2">Our Products</h1>
+        <p className="text-gray-600 font-semibold">
+          Lorem ipsum dolor sit amet,{" "}
+          <span className="font-bold text-gray-800 text-lg">
+            consectetur adipiscing
+          </span>{" "}
+          elit. Sed hendrerit diam in bibendum consequat. Fusce consequat
+          pharetra mauris, eget rhoncus libero feugiat ut. Vestibulum ante ipsum
+          primis in faucibus orci luctus et ultrices posuere cubilia Curae;
+          Phasellus euismod, magna sed laoreet mollis, ex purus faucibus nulla,
+          ac fermentum nunc justo vel odio. Cras sagittis vehicula arcu nec
+          varius. Aliquam eu quam vel nisi tempus ultrices vel vitae nunc. Donec
+          varius sollicitudin purus ut fermentum. Vivamus bibendum velit vel
+          lacus scelerisque,
+        </p>
+      </div>
     </MainLayout>
   );
 };

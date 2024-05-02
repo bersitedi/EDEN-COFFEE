@@ -34,7 +34,7 @@ const Sidebar = ({ displayAll }) => {
         <div className="md:hidden z-50">
           {navIsVisible ? (
             <AiOutlineClose
-              className="w-6 h-6 text-white bg-yellow-600 rounded-full"
+              className="w-6 h-6 text-gray-700 bg-gray-100 rounded-full"
               onClick={navVisibilityHandler}
             />
           ) : (
@@ -45,7 +45,7 @@ const Sidebar = ({ displayAll }) => {
         <div
           className={`absolute inset-y-0 left-0 z-40 w-64 h-[400px] dark:bg-gray-800 transform ${
             navIsVisible ? "translate-x-0" : "-translate-x-full"
-          } transition-transform md:hidden bg-yellow-900 rounded-md`}
+          } transition-transform md:hidden bg-gray-100 rounded-md`}
         >
           <div className="h-full px-3 py-4">
             <ul className="space-y-2 font-medium mt-10">
@@ -53,8 +53,8 @@ const Sidebar = ({ displayAll }) => {
                 <li key={category.id}>
                   <button
                     onClick={() => handleCategoryClick(category.id)}
-                    className={`flex items-center p-2 text-white rounded-lg dark:text-white hover:bg-yellow-800 dark:hover:bg-gray-700 group ${
-                      selectedCategory === category.id ? "text-blue-800" : ""
+                    className={`flex items-center p-2  rounded-lg dark:text-white hover:bg-gray-300 dark:hover:bg-gray-700 group ${
+                      selectedCategory === category.id ? "bg-gray-300" : ""
                     }`}
                   >
                     <span className="ms-3">{category.title}</span>
@@ -62,19 +62,19 @@ const Sidebar = ({ displayAll }) => {
                 </li>
               ))}
             </ul>
-            <button className="flex justify-center items-center border border-yellow-900"></button>
+            <button className="flex justify-center items-center border border-gray-300"></button>
           </div>
         </div>
 
-        <div className="hidden md:flex z-40 w-64 h-[400px] bg-yellow-900 rounded-md dark:bg-gray-800">
+        <div className="hidden md:flex z-40 w-64 h-[430px] bg-gray-100 dark:bg-gray-800">
           <div className="h-full px-3 py-4 overflow-hidden">
             <ul className="space-y-2 font-medium mt-10">
               {categories.map((category) => (
                 <li key={category.id}>
                   <button
                     onClick={() => handleCategoryClick(category.id)}
-                    className={`flex items-center p-2 text-white rounded-lg dark:text-white hover:bg-yellow-800 dark:hover:bg-gray-700 group ${
-                      selectedCategory === category.id ? " bg-yellow-800" : ""
+                    className={`flex items-center p-2  rounded-lg font-bold dark:text-white hover:bg-gray-300 dark:hover:bg-gray-700 group ${
+                      selectedCategory === category.id ? " bg-gray-300" : ""
                     }`}
                   >
                     <span className="ms-3">{category.title}</span>
@@ -94,7 +94,7 @@ const Sidebar = ({ displayAll }) => {
                 <Link to={card.link} key={index}>
                   {" "}
                   {/* Wrap each card with Link component */}
-                  <div className="p-4 border border-gray-200 rounded-lg shadow-md dark:border-gray-700">
+                  <div className="p-4 border bg-white md:bg-gray-100 border-gray-200 rounded-lg shadow-md dark:border-gray-700">
                     <img
                       src={card.imageUrl}
                       alt={card.title}
@@ -103,7 +103,7 @@ const Sidebar = ({ displayAll }) => {
                     <h3 className="text-lg font-semibold text-gray-800 dark:text-white">
                       {card.title}
                     </h3>
-                    <p className="text-gray-600 dark:text-gray-400">
+                    <p className="text-gray-600 dark:text-gray-400 text-sm">
                       {card.description}
                     </p>
                   </div>

@@ -15,28 +15,28 @@ const Contact = () => {
           <div className="md:w-1/2 mb-4 md:mb-0">
             <img src={three} alt="Company" className="rounded-lg shadow-lg" />
           </div>
-          <div className="md:w-1/2 md:pl-8 mb-10 mt-5 space-y-3">
-            <h2 className="text-3xl font-semibold mb-4 text-gray-700">
+          <div className="flex items-start justify-start flex-col md:w-1/2 md:pl-8 mb-10 mt-5 space-y-3">
+            <h2 className="text-2xl md:text-3xl font-semibold mb-4 text-gray-700">
               Contact Information
             </h2>
 
             <div className="flex items-center">
-              <FaEnvelope className="w-6 h-6 mr-3 text-blue-500" />
+              <FaEnvelope className="text-xl mr-3 text-blue-500" />
               <div>
                 <h3 className="text-xl font-semibold">Email</h3>
                 <p className="text-gray-700">example@example.com</p>
               </div>
             </div>
             <div className="flex items-center">
-              <FaPhone className="w-6 h-6 mr-3 text-blue-500" />
+              <FaPhone className="text-xl mr-3 text-blue-500" />
               <div>
                 <h3 className="text-xl font-semibold">Phone</h3>
                 <p className="text-gray-700">+1234567890</p>
               </div>
             </div>
             <div className="flex items-center">
-              <FaMapPin className="w-6 h-6 mr-3 text-blue-500" />
-              <h3 className="text-xl font-semibold">location of the company</h3>
+              <FaMapPin className="text-xl mr-3 text-blue-500" />
+              <h3 className="font-semibold">location of the company</h3>
             </div>
             <div className="flex items-center space-x-4  ml-10">
               <FiTwitter className="w-6 h-6 text-white bg-blue-500  hover:cursor-pointer" />
